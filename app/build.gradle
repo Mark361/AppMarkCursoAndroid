@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26//Versión del SDK a la que se va a compilar
+    defaultConfig {
+        applicationId "com.markdurfey.casa.appmarkcursoandroid"
+        minSdkVersion 17//A partir de qué api se va a ejecutar la app
+        targetSdkVersion 26//Versión para la que se construye
+        versionCode 1//Versiones para playstore
+        versionName "1.0"//Versiones para playstore
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"//Ayuda de pruebas unitarias
+    }
+    buildTypes {
+        release {
+            minifyEnabled false//Opciones avanzadas pra minimizar el tamaño de la app
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
